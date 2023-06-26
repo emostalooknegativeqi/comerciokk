@@ -30,11 +30,12 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="Produtos :${Produtos}">
-							<td th:text="${produto.id}"></td>
-							<td th:text="${produto.nome}"></td>
-							<td th:text="${produto.codigoBarras}"></td>
-							<td th:text="${produto.preco}"></td>
+						<tr th:each="produto :${listaDeProdutos}">
+							<td th:text="${Produtos.id}"></td>
+							<td th:text="${Produtos.nome}"></td>
+							<td th:text="${Produtos.codigoBarras}"></td>
+							<td th:text="${Produtos.preco}"></td>
+							<td th:text="${Produtos.descricao}"></td>
 							<td><a href="#">Editar</a></td>
 						</tr>
 					</tbody>
