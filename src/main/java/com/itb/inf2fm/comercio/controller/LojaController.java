@@ -1,8 +1,8 @@
 package com.itb.inf2fm.comercio.controller;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.itb.inf2fm.comercio.model.Produto;
@@ -13,7 +13,7 @@ public class LojaController {
 	List<Produto> listaDeProdutos = new ArrayList<Produto>();
 	
 	@GetMapping("/listar")
-	public String listarProdutos() {
+	public String listarProdutos(Model model) {
 		
 		Produto p1 = new Produto();
 		p1.setId(20l);
@@ -33,13 +33,15 @@ public class LojaController {
 		p1.setId(20l);
 		p1.setNome("Computador Pichau Gmaer LED RGB ULTRA PRO kk");
 		p1.setCodigobarras("2500HOMENSDIFERENTES");
-		p1.setDescricao("roda pou a 30fps");
+		p1.setDescricao("roda pou a 15fps");
 		p1.setPreco(5999.99);
 		
 		//add os produtos a lista
 		
 		listaDeProdutos.add(p1);
 		listaDeProdutos.add(p2);
+		
+		model.addAttribute("listaDeProdutos",listaDeProdutos);
 		
 		return "produtos.html"; 
 		

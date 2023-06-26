@@ -29,6 +29,15 @@
 							<th><a href="">Editar</a></th>
 						</tr>
 					</thead>
+					<tbody>
+						<tr th:each="Produtos :${Produtos}">
+							<td th:text="${produto.id}"></td>
+							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.codigoBarras}"></td>
+							<td th:text="${produto.preco}"></td>
+							<td><a href="#">Editar</a></td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</main>
