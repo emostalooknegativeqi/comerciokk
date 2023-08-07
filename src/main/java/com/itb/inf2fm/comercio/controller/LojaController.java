@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.itb.inf2fm.comercio.model.Produto;
@@ -47,7 +48,7 @@ public class LojaController {
 		Produto p4 = new Produto();
 		p4.setId (23l);
 		p4.setNome("Sofa lamerd");
-		p4.setCodigobarras("MONARK");
+		p4.setCodigobarras("M0N4RKKK");
 		p4.setDescricao("por que não da pra conversar com um sofá?");
 		p4.setPreco(3215.89);
 		p4.setCodStatus(false);
@@ -65,4 +66,18 @@ public class LojaController {
 		
 		return "produtos";
 	}
+	
+	@GetMapping("/novo-produto")
+	public String novoProduto(Produto produto, Model model) {
+		model.addAttribute("produto",produto);
+		
+		return "novo-prod";
+	}
+	
+	@PostMapping("/add-prod")
+	public String addProduto(Produto produto) {
+		
+		return "redirect:/comercio/produtos/listar";
+	}
+	
 }
