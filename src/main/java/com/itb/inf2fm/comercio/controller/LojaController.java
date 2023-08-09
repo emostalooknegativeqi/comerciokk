@@ -20,7 +20,7 @@ public class LojaController {
 	
 	@GetMapping("/listar")
 	public String listarProdutos(Model model) {
-		
+		/*
 		Produto p1 = new Produto();
 		p1.setId (20l);
 		p1.setNome("Fogão 4 bocas boate kiss");
@@ -61,7 +61,7 @@ public class LojaController {
 		listaDeProdutos.add(p2);
 		listaDeProdutos.add(p3);
 		listaDeProdutos.add(p4);
-		
+		*/
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		
 		return "produtos";
